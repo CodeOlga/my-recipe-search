@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import image from './food.jpg';
 import icon from './recipe.png';
 import MyRecipesComponent from './MyRecipesComponent';
+import React from 'react';
 
 function App() {
 
-  const MY_ID = "3d7abc30";
-  const MY_KEY = "49a8f5aad56d70efa20cf89a49bb87b2";
+  const MY_ID = process.env.REACT_APP_MY_ID;
+  const MY_KEY = process.env.REACT_APP_MY_KEY;
 
   const [mySearch, setMySearch] = useState('');
   const [myRecipes, setMyRecipes] = useState([]);
@@ -30,6 +31,7 @@ function App() {
     setWordSubmitted(mySearch);
   }
   return (
+
     <div className="main">
       <div className="container">
         <img className='background' src={image} alt="bg" />
